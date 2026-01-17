@@ -97,6 +97,25 @@
             font-size: 0.9em;
         }
     </style>
+
+    <script>
+        // Dynamic Element 1: Live Date and Time
+        function updateDateTime() {
+            const now = new Date();
+            document.getElementById("datetime").innerHTML = now.toLocaleString();
+        }
+        setInterval(updateDateTime, 1000);
+
+        // Dynamic Element 2: Easter Egg
+        function revealEasterEgg() {
+            const egg = document.getElementById("easterEgg");
+            if (egg.style.display === "none") {
+                egg.style.display = "block";
+            } else {
+                egg.style.display = "none";
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -111,7 +130,12 @@
     <!-- About Me Section -->
     <div class="section" id="about">
         <div class="card">
-            <h1>About Me</h1>
+            <h1 onclick="revealEasterEgg()" style="cursor:pointer;">About Me</h1>
+            <p style="font-size: 0.9em; color: #777;">(Try clicking the heading 👀)</p>
+            <p id="datetime" style="font-weight: 500; margin-bottom: 20px;"></p>
+            <div id="easterEgg" style="display:none; margin-bottom:20px;">
+                <p><strong>Easter Egg:</strong> You found it! This site uses JavaScript to show and hide content dynamically.</p>
+            </div>
             <p>
                 My name is Shuaa, I am 16 years old and currently in grade ten. I am taking computer science as one of my optional courses, and throughout this semester I have learned a lot about programming and problem solving. I enjoy working with code because it allows me to be creative while also thinking logically. This e-portfolio highlights the skills and projects I have worked on so far.
             </p>
@@ -174,3 +198,4 @@
 
 </body>
 </html>
+
